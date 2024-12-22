@@ -160,6 +160,7 @@ features = [
     "NSTextInputClient",
     "NSTextInputContext",
     "NSView",
+    "NSPanel",
     "NSWindow",
     "NSWindowScripting",
     "NSWindowTabGroup",

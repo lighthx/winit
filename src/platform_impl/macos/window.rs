@@ -2,7 +2,7 @@
 
 use objc2::rc::{autoreleasepool, Retained};
 use objc2::{declare_class, mutability, ClassType, DeclaredClass};
-use objc2_app_kit::{NSResponder, NSWindow};
+use objc2_app_kit::{NSPanel, NSResponder};
 use objc2_foundation::{MainThreadBound, MainThreadMarker, NSObject};
 
 use super::event_loop::ActiveEventLoop;
@@ -97,7 +97,7 @@ declare_class!(
 
     unsafe impl ClassType for WinitWindow {
         #[inherits(NSResponder, NSObject)]
-        type Super = NSWindow;
+        type Super = NSPanel;
         type Mutability = mutability::MainThreadOnly;
         const NAME: &'static str = "WinitWindow";
     }
@@ -105,11 +105,6 @@ declare_class!(
     impl DeclaredClass for WinitWindow {}
 
     unsafe impl WinitWindow {
-        #[method(canBecomeMainWindow)]
-        fn can_become_main_window(&self) -> bool {
-            trace_scope!("canBecomeMainWindow");
-            true
-        }
 
         #[method(canBecomeKeyWindow)]
         fn can_become_key_window(&self) -> bool {

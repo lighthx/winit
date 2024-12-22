@@ -149,7 +149,7 @@ impl ApplicationDelegate {
         // We need to delay setting the activation policy and activating the app
         // until `applicationDidFinishLaunching` has been called. Otherwise the
         // menu bar is initially unresponsive on macOS 10.15.
-        app.setActivationPolicy(self.ivars().activation_policy);
+        // app.setActivationPolicy(self.ivars().activation_policy);
 
         window_activation_hack(&app);
         #[allow(deprecated)]
