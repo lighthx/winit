@@ -106,10 +106,10 @@ declare_class!(
 
     unsafe impl WinitWindow {
         #[method(canBecomeMainWindow)]
-                fn can_become_main_window(&self) -> bool {
-                    trace_scope!("canBecomeMainWindow");
-                    true
-                }
+        fn can_become_main_window(&self) -> bool {
+            trace_scope!("canBecomeMainWindow");
+            true
+        }
 
         #[method(canBecomeKeyWindow)]
         fn can_become_key_window(&self) -> bool {
